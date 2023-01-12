@@ -1,16 +1,19 @@
 {
-  "name": "c8y-summit-ui-demo",
+  "name": "c8y-pkg-bookmark-plugin",
   "version": "1.0.0",
-  "description": "This is the Cumulocity module federation plugin. Plugins can be developed like any Cumulocity application, but can be used at runtime by other applications. Therefore, they export an Angular module which can then be imported by any other application. The exports are defined in `package.json`:",
+  "description": "Allows you to bookmark your favorite device in the navigator.",
   "scripts": {
-    "start": "c8ycli server -u http://iot-summit-berlin.dev.c8y.io --shell cockpit",
+    "start": "c8ycli server -u http://jan.latest.stage.c8y.io --shell cockpit",
     "build": "c8ycli build",
     "deploy": "c8ycli deploy",
     "postinstall": "ngcc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "Cumulocity",
+    "Plugin"
+  ],
+  "author": "Jan Hommes",
+  "license": "MIT",
   "dependencies": {
     "@angular/animations": "14.0.6",
     "@angular/cdk": "14.1.2",
@@ -22,12 +25,12 @@
     "@angular/platform-browser-dynamic": "14.0.6",
     "@angular/router": "14.0.6",
     "@angular/upgrade": "14.0.6",
-    "@c8y/client": "1015.164.0",
-    "@c8y/ngx-components": "1015.164.0",
+    "@c8y/client": "~1016.0.0",
+    "@c8y/ngx-components": "~1016.0.0",
     "@ngx-translate/core": "14.0.0",
     "rxjs": "~6.6.3",
     "zone.js": "~0.11.7",
-    "@c8y/style": "1015.164.0"
+    "@c8y/style": "~1016.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "14.0.6",
@@ -36,45 +39,38 @@
     "@angular/service-worker": "14.0.6",
     "@angular/localize": "14.0.6",
     "@types/jest": "^28.1.6",
-    "@types/webpack": "^5.28.0",
-    "file-loader": "^6.2.0",
     "jest": "^28.1.3",
     "jest-preset-angular": "^12.2.0",
     "typescript": "4.7.4",
-    "style-loader": "3.3.1",
-    "html-loader": "4.1.0",
-    "@c8y/cli": "1015.164.0"
+    "@c8y/cli": "~1016.247.0"
   },
   "c8y": {
     "application": {
-      "name": "summit-ui-demo",
-      "description": "Custom widget with module federation",
-      "contextPath": "summit-ui-demo",
-      "key": "summit-ui-demo-application-key",
-      "globalTitle": "Custom widget with Module Federation",
+      "name": "Bookmark plugin",
+      "description": "Allows you to bookmark your favorite device in the navigator.",
+      "contextPath": "c8y-pkg-bookmark-plugin",
+      "key": "c8y-pkg-bookmark-plugin-key",
       "tabsHorizontal": true,
       "isPackage": true,
       "noAppSwitcher": true,
       "package": "plugin",
       "exports": [
         {
-          "name": "Example widget plugin",
-          "module": "WidgetPluginModule",
-          "path": "./widget/widget-plugin.module.ts",
-          "description": "Adds a custom widget to the shell application"
-        },
-        {
           "name": "Device bookmarks",
           "module": "BookmarksModule",
           "path": "./bookmarks/bookmarks.module.ts",
-          "description": "Allows you to bookmark your favorite device"
+          "description": "Allows you to bookmark your favorite device in the navigator."
         }
       ],
       "remotes": {
-        "summit-ui-demo": [
-          "WidgetPluginModule", "BookmarksModule"
+        "c8y-pkg-bookmark-plugin": [
+          "BookmarksModule"
         ]
-      }
+      },
+      "copy": [
+        { "from": "img/bookmark-plugin.gif", "to": "img/bookmark-plugin.gif" },
+        { "from": "LICENCE", "to": "LICENCE" }
+      ]
     }
   },
   "browserslist": [
