@@ -48,8 +48,8 @@
     "application": {
       "name": "Bookmark plugin",
       "description": "Allows you to bookmark your favorite device in the navigator.",
-      "contextPath": "c8y-pkg-bookmark-plugin",
-      "key": "c8y-pkg-bookmark-plugin-key",
+      "contextPath": "sag-pkg-bookmark-plugin",
+      "key": "sag-pkg-bookmark-plugin-key",
       "tabsHorizontal": true,
       "isPackage": true,
       "noAppSwitcher": true,
