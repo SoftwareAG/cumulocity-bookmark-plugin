@@ -1,5 +1,5 @@
 {
-  "name": "c8y-pkg-bookmark-plugin",
+  "name": "sag-pkg-bookmark-plugin",
   "version": "1.0.0",
   "description": "Allows you to bookmark your favorite device in the navigator.",
   "scripts": {
@@ -63,13 +63,13 @@
         }
       ],
       "remotes": {
-        "c8y-pkg-bookmark-plugin": [
+        "sag-pkg-bookmark-plugin": [
           "BookmarksModule"
         ]
       },
       "copy": [
         { "from": "img/bookmark-plugin.gif", "to": "img/bookmark-plugin.gif" },
-        { "from": "LICENCE", "to": "LICENCE" }
+        { "from": "LICENCE" }
       ]
     }
   },
