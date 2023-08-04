@@ -1,6 +1,6 @@
 {
-  "name": "sag-pkg-bookmark-plugin",
-  "version": "1.0.0",
+  "name": "c8y-pkg-bookmark-plugin",
+  "version": "1.0.1",
   "description": "Allows you to bookmark your favorite device in the navigator.",
   "scripts": {
     "start": "c8ycli server -u http://jan.latest.stage.c8y.io --shell cockpit",
